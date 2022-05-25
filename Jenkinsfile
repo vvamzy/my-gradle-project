@@ -7,9 +7,14 @@ pipeline {
                 git 'https://github.com/vvamzy/my-gradle-project.git'
             }
         }
-         stage('Building with gradle') {
+        stage('Building with gradle') {
             steps {
                 sh 'gradle clean build'
+            }
+        }
+        stage('Echo') {
+            steps {
+                sh echo "helloworld"
             }
         }
     }
